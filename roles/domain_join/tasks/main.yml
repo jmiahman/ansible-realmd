@@ -20,7 +20,7 @@
 
 - name: Install AD Domain packages
   apt: 
-    name: {{ item }}
+    name: "{{ item }}"
     state: present 
     update_cache: yes
   with_items:
@@ -61,7 +61,7 @@
 
 - name: Discover realm debug
   debug: 
-    msg: {{ realm_discover_results.stdout }}
+    msg: "{{ realm_discover_results.stdout }}"
 
 - name: Create kerberos ticket
   expect:
@@ -78,7 +78,7 @@
 
 - name: Debug realm_list_results
   debug:
-    msg: {{ realm_list_results.stdout }}
+    msg: "{{ realm_list_results.stdout }}"
 
 - name: Join system to AD
   expect:
